@@ -28,7 +28,7 @@ const Categories = ({ data, notes }) => {
   );
 
   const sortedNotes = [...notes].sort(
-    (a, b) => new Date(b.dateCreated) - new Date(a.dateCreated)
+    (a, b) => new Date(a.dateCreated) - new Date(b.dateCreated)
   );
 
   return (
@@ -47,11 +47,7 @@ const Categories = ({ data, notes }) => {
               <>
                 <h3 className="categories__item-name">{name}</h3>
                 {catNotes.map(({ id, content }) => (
-                  <p
-                    key={id}
-                    className="categories__item-note"
-                    data-testid="note"
-                  >
+                  <p key={id} className="categories__item-note">
                     {content}
                   </p>
                 ))}
@@ -66,11 +62,7 @@ const Categories = ({ data, notes }) => {
                   <div className="categories__item" key={id}>
                     <h4 className="categories__item-name">{name}</h4>
                     {subCatNotes.map(({ id, content }) => (
-                      <p
-                        key={id}
-                        className="categories__item-note"
-                        data-testid="note"
-                      >
+                      <p key={id} className="categories__item-note">
                         {content}
                       </p>
                     ))}
