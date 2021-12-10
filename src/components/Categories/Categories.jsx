@@ -47,7 +47,11 @@ const Categories = ({ data, notes }) => {
               <>
                 <h3 className="categories__item-name">{name}</h3>
                 {catNotes.map(({ id, content }) => (
-                  <p key={id} className="categories__item-note">
+                  <p
+                    key={id}
+                    className="categories__item-note"
+                    data-testid="note"
+                  >
                     {content}
                   </p>
                 ))}

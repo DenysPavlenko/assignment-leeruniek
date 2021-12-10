@@ -10,13 +10,7 @@ describe('Categories tests', () => {
     expect(categoriesComp).toBeInTheDocument();
   });
 
-  test('renders 3 categories', () => {
-    render(<Categories data={categories} notes={notes} />);
-    const renderedCategories = screen.getAllByRole('heading', { level: 3 });
-    expect(renderedCategories.length).toBe(3);
-  });
-
-  test('categories are in alphabetical order', () => {
+  test('renders right categories length', () => {
     render(<Categories data={categories} notes={notes} />);
     const renderedCategories = screen.getAllByRole('heading', { level: 3 });
     expect(renderedCategories.length).toBe(3);
@@ -34,13 +28,10 @@ describe('Categories tests', () => {
   test('renders proper categories notes', () => {
     render(<Categories data={categories} notes={notes} />);
     const renderedCategory = screen.getByText(/individual/i);
-    expect(renderedCategory.nextSibling.textContent).toBe('...');
-  });
-
-  test('doesn`t render subcategory if it is absent', () => {
-    render(<Categories data={categories} notes={notes} />);
-    const renderedCategory = screen.getByText(/individual/i);
-    expect(renderedCategory.nextSibling.textContent).toBe('...');
+    const noteElems = within(renderedCategory.parentElement).getAllByTestId(
+      'note'
+    );
+    expect(noteElems.length).toBe(3);
   });
 
   test('renders proper subcategory/ies', () => {
