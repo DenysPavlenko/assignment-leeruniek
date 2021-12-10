@@ -7,7 +7,7 @@ const App = () => {
     <div className="app">
       <div className="app__plan">
         <h2>{plan.name}</h2>
-        <p>{plan.userCreated}</p>
+        <h5>{plan.userCreated}</h5>
       </div>
       <div className="app__categories">
         <Categories data={categories} notes={notes} />
