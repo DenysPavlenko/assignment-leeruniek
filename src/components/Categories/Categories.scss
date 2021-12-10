@@ -1,0 +1,12 @@
+.categories {
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &__item-name {
+    font-size: 18px;
+  }
+  &__item-note {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+}

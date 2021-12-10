@@ -1,0 +1,44 @@
+.accordion {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  &.is-active .accordion__icon {
+    transform: rotate(180deg);
+  }
+  &.no-content > .accordion__button {
+    cursor: auto;
+  }
+  &.no-content .accordion__icon {
+    display: none;
+  }
+  &__button {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    border: none;
+    padding: 15px 10px;
+    text-align: left;
+    cursor: pointer;
+  }
+  &__heading {
+    flex: 1;
+  }
+  &__icon {
+    display: block;
+    width: 13px;
+    margin-top: 5px;
+    transition: 0.2s;
+  }
+  &__content {
+    padding: 10px 20px 20px;
+    animation: fadeIn 0.4s ease;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

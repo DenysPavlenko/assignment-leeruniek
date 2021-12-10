@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Categories } from 'components/Categories';
+import './App.scss';
+import { plan, categories, notes } from 'assets/dummy-data';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="app__plan">
+        <h2>{plan.name}</h2>
+        <p>{plan.userCreated}</p>
+      </div>
+      <div className="app__categories">
+        <Categories data={categories} notes={notes} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
